@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý danh mục</title>
+    <link rel="stylesheet" href="../css/category-manager.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+
+    <!-- ADD FORM CATEGORY -->
+    <div class="modal" id="addCategoryModal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h2>Thêm mới danh mục</h2>
+        <form id="addCategoryForm">
+          <div class="form-group">
+            <label for="categoryCode">Mã danh mục <span>*</span></label>
+            <input type="text" id="categoryCode" name="categoryCode" required />
+          </div>
+          <div class="form-group">
+            <label for="categoryName">Tên danh mục <span>*</span></label>
+            <input type="text" id="categoryName" name="categoryName" required />
+          </div>
+          <div class="form-group">
+            <label>Trạng thái</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="status" value="active" checked />
+                Đang hoạt động
+              </label>
+              <label>
+                <input type="radio" name="status" value="inactive" />
+                Ngừng hoạt động
+              </label>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" id="cancelBtn" class="btn btn-cancel">Hủy</button>
+            <button type="submit" class="btn btn-submit">Thêm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- form main -->
+    <div class="container">
+      <nav class="navbar">
+        <div class="nav-right">
+            <i class="fa-solid fa-bell"></i>
+            <img src="https://s3-alpha-sig.figma.com/img/10d5/c319/419f2137bf8772f28aaf576b74a68518?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=iytb3s2M1k7k-iAkKNkfPnL00GAjjgbHpItTn4kX-S7q~t8~8ocirn-yZtNX5IoSglr5tafqcvcUPW21ftJyUztX5smWWVsVFOpvwUjwCzaezZsTJmdQKLA2zIU1hSqK5vf9cNP6GHoEygLoINYNAiGCphtOVwJMGnSQYd4zg-a9KhruRu0xh4yD6NrKjYrgJdO8mpKjvP2nteN~66O4bTyAokuHxrjGc6ZRIM~J8fbQtuhoNlNxifQt7vwgOrl7~AYr4sh~K98HLQBd163vymiaBoDpw8HxaBnUm3Bagw-peeiFcNNt7BCmGz2fgeT~9er4~iZ8pOTHfVMRcUCTNA__" alt="User Avatar" class="avatar"> <!-- Ảnh đại diện -->
+        </div>
+    </nav>
+
+      <div class="sidebar">
+        <h2>🔥Ecommerce</h2>
+        <ul>
+          <a href="./dashboard.html"><li><i class="fas fa-chart-line"></i> Thống kê</li></a>
+          <a href="./category-manager.html"> <li><i class="fas fa-list"></i> Danh mục</li></a>
+          <a href="./product-manager.html"> <li><i class="fas fa-list"></i> Sản  Phẩm</li></a>
+        </ul>
+      </div>
+
+
+      <main class="main-content">
+        <header>
+          <h1>Danh mục</h1>
+          <button class="btn" id="openModal">Thêm mới danh mục</button>
+        </header>
+
+
+
+        <div class="filters">
+          <select>
+            <option>Đang hoạt động</option>
+            <option>Tất cả</option>
+            <option>Đang hoạt động</option>
+            <option>Ngừng hoạt động</option>
+          </select>
+          <input type="text" placeholder="Tìm kiếm danh mục theo tên" />
+        </div>
+
+
+
+
+        <table>
+          <thead>
+            <tr>
+              <th>Mã danh mục</th>
+              <th>Tên danh mục</th>
+              <th>Trạng thái</th>
+              <th>Chức năng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DM001</td>
+              <td>Quần áo</td>
+              <td><span class="status active1">🟢 Đang hoạt động</span></td>
+              <td>
+                <i class="fas fa-trash delete"></i>
+                <i class="fas fa-edit edit"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>DM002</td>
+              <td>Kính mắt</td>
+              <td><span class="status inactive">🔴 Ngừng hoạt động</span></td>
+              <td>
+                <i class="fas fa-trash delete"></i>
+                <i class="fas fa-edit edit"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>DM003</td>
+              <td>Giày dép</td>
+              <td><span class="status active1">🟢 Đang hoạt động</span></td>
+              <td>
+                <i class="fas fa-trash delete"></i>
+                <i class="fas fa-edit edit"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>DM004</td>
+              <td>Thời trang nam</td>
+              <td><span class="status inactive">🔴 Ngừng hoạt động</span></td>
+              <td>
+                <i class="fas fa-trash delete"></i>
+                <i class="fas fa-edit edit"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>DM005</td>
+              <td>Thời trang nữ</td>
+              <td><span class="status inactive">🔴 Ngừng hoạt động</span></td>
+              <td>
+                <i class="fas fa-trash delete"></i>
+                <i class="fas fa-edit edit"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>DM006</td>
+              <td>Hoa quả</td>
+              <td><span class="status inactive">🔴 Ngừng hoạt động</span></td>
+              <td>
+                <i class="fas fa-trash delete"></i>
+                <i class="fas fa-edit edit"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>DM007</td>
+              <td>Rau</td>
+              <td><span class="status active1">🟢 Đang hoạt động</span></td>
+              <td>
+                <i class="fas fa-trash delete"></i>
+                <i class="fas fa-edit edit"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>DM008</td>
+              <td>Điện thoại</td>
+              <td><span class="status inactive">🔴 Ngừng hoạt động</span></td>
+              <td>
+                <i class="fas fa-trash delete"></i>
+                <i class="fas fa-edit edit"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+
+
+        <div class="pagination">
+          <button>&laquo;</button>
+          <button>1</button>
+          <button>2</button>
+          <button class="active">3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>7</button>
+          <button>...</button>
+          <button>20</button>
+          <button>&raquo;</button>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="../js/category-manager.js"></script>
+</html>
