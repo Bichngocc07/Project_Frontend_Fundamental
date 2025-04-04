@@ -6,39 +6,27 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f4f4f4;
+.body {
+    background-color: #000000;
 }
 
-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
     background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
 
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
 
 .banner {
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(254, 254, 254);
     text-align: center;
 }
 
