@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const openModalBtn = document.getElementById("open-modal-btn");
     const modal = document.getElementById("addProductModal");
-    const closeModalBtn = document.getElementById("closeModalBtn");
+    const closeModalBtn = document.getElementById("closeModal");
     const cancelBtn = document.getElementById("cancelBtn");
     const addProductForm = document.getElementById("addProductForm");
     const productListBody = document.getElementById("product-list");
