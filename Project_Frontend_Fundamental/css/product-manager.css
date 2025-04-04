@@ -342,3 +342,7 @@ textarea {
 .modal.show {
   display: flex;
 }
+/* Demo hiển thị modal khi thêm class .show (và JS sẽ toggle class hoặc style) */
+.modal.show {
+  display: flex;
+}
