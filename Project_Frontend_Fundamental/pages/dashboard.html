@@ -18,7 +18,54 @@
                 <div class="icons">
                     <i class="far fa-heart"></i>
                     <i class="fas fa-shopping-cart"></i>
-                    <i class="fa-regular fa-user"></i>
+                    <i id="accountIcon" class="fa-regular fa-user"></i>
+
+
+                    <div class="account-menu">
+                        <!-- <i id="accountIcon" class="fa-regular fa-user"></i> -->
+                        <div id="dropdownMenu" class="dropdown hidden">
+                          <a href="./register.html">Đăng ký</a>
+                          <a href="./login.html">Đăng nhập</a>
+                        </div>
+                      </div>
+                    </div>
+
+<style>
+.account-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 140px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  padding: 8px 0;
+}
+
+.dropdown a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+
+                    <!-- <i class="fa-regular fa-user"></i> -->
+
                 </div>
                 <li><a href="#">Trang chủ</a></li>
                 <li><a href="#">Giới thiệu</a></li>
@@ -222,6 +269,24 @@
             </div>
         </footer>
         
+        <script>
+    const accountIcon = document.getElementById('accountIcon');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Toggle dropdown khi click vào icon
+    accountIcon.addEventListener('click', (e) => {
+      e.stopPropagation(); // Ngăn click lan ra ngoài
+      dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Ẩn dropdown khi click ra ngoài
+    window.addEventListener('click', function(event) {
+      if (!accountIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+        </script>
     
 </body>
 </html>
+
